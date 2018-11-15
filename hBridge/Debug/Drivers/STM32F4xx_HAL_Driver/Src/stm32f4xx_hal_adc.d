@@ -1,5 +1,5 @@
-Src/main.o: ../Src/main.c \
- C:/Users/admin/Desktop/IEEE/H-Bridge\ Testing/hBridge/Inc/main.h \
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.o: \
+ ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c \
  C:/Users/admin/Desktop/IEEE/H-Bridge\ Testing/hBridge/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
  C:/Users/admin/Desktop/IEEE/H-Bridge\ Testing/hBridge/Inc/stm32f4xx_hal_conf.h \
  C:/Users/admin/Desktop/IEEE/H-Bridge\ Testing/hBridge/Inc/main.h \
@@ -29,8 +29,6 @@ Src/main.o: ../Src/main.c \
  C:/Users/admin/Desktop/IEEE/H-Bridge\ Testing/hBridge/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h \
  C:/Users/admin/Desktop/IEEE/H-Bridge\ Testing/hBridge/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
  C:/Users/admin/Desktop/IEEE/H-Bridge\ Testing/hBridge/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
-
-C:/Users/admin/Desktop/IEEE/H-Bridge\ Testing/hBridge/Inc/main.h:
 
 C:/Users/admin/Desktop/IEEE/H-Bridge\ Testing/hBridge/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
 

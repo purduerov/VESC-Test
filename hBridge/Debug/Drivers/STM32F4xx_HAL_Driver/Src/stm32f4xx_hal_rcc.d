@@ -20,6 +20,8 @@ Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o: \
  C:/Users/admin/Desktop/IEEE/H-Bridge\ Testing/hBridge/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h \
  C:/Users/admin/Desktop/IEEE/H-Bridge\ Testing/hBridge/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h \
  C:/Users/admin/Desktop/IEEE/H-Bridge\ Testing/hBridge/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h \
+ C:/Users/admin/Desktop/IEEE/H-Bridge\ Testing/hBridge/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc.h \
+ C:/Users/admin/Desktop/IEEE/H-Bridge\ Testing/hBridge/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc_ex.h \
  C:/Users/admin/Desktop/IEEE/H-Bridge\ Testing/hBridge/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h \
  C:/Users/admin/Desktop/IEEE/H-Bridge\ Testing/hBridge/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h \
  C:/Users/admin/Desktop/IEEE/H-Bridge\ Testing/hBridge/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h \
@@ -67,6 +69,10 @@ C:/Users/admin/Desktop/IEEE/H-Bridge\ Testing/hBridge/Drivers/STM32F4xx_HAL_Driv
 C:/Users/admin/Desktop/IEEE/H-Bridge\ Testing/hBridge/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h:
 
 C:/Users/admin/Desktop/IEEE/H-Bridge\ Testing/hBridge/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h:
+
+C:/Users/admin/Desktop/IEEE/H-Bridge\ Testing/hBridge/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc.h:
+
+C:/Users/admin/Desktop/IEEE/H-Bridge\ Testing/hBridge/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc_ex.h:
 
 C:/Users/admin/Desktop/IEEE/H-Bridge\ Testing/hBridge/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h:
 
