@@ -45,8 +45,6 @@
 /* USER CODE END Includes */
 
 /* Private variables ---------------------------------------------------------*/
-ADC_HandleTypeDef hadc1;
-ADC_HandleTypeDef hadc2;
 ADC_HandleTypeDef hadc3;
 
 TIM_HandleTypeDef htim2;
@@ -63,9 +61,6 @@ static void MX_GPIO_Init(void);
 static void MX_TIM2_Init(void);
 static void MX_TIM3_Init(void);
 static void MX_ADC3_Init(void);
-static void MX_ADC1_Init(void);
-static void MX_ADC2_Init(void);
-void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim);
 
 void HAL_TIM_MspPostInit(TIM_HandleTypeDef *htim);
 
@@ -76,6 +71,7 @@ void HAL_TIM_MspPostInit(TIM_HandleTypeDef *htim);
 /* USER CODE END PFP */
 
 /* USER CODE BEGIN 0 */
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim);
 short set1 = 0; // dictates whether the pwm writes to h1 or l1
 short set2 = 0; // dictates whether the pwm writes to h2 or l2
 short set3 = 0; // dictates whether the pwm writes to h3 or l3
@@ -93,7 +89,7 @@ int size = sizeof(lookUp);
 
 int arrayPos3 = 0; // keeps track of the first pwm's position in the look up table
 int arrayPos2 = sizeof(lookUp)/3; // keeps track of the second pwm's position in the look up table
-int arrayPos1 = 7*(sizeof(lookUp))/9; // keeps track of the third pwm's position in the look up table
+int arrayPos1 = 2*(sizeof(lookUp))/3; // keeps track of the third pwm's position in the look up table
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
@@ -104,7 +100,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
             percent++;
     }
     if(HAL_ADC_GetValue(ADC1) >= 134300000){
-//      if(HAL_ADC_PollForConverstion(&hadc1,1000000) == HAL_OK){
+            //      if(HAL_ADC_PollForConverstion(&hadc1,1000000) == HAL_OK){
             HAL_GPIO_WritePin(GPIOC, GPIO_PIN_5,1);
     }
 }
@@ -143,8 +139,6 @@ int main(void)
     MX_TIM2_Init();
     MX_TIM3_Init();
     MX_ADC3_Init();
-    MX_ADC1_Init();
-    MX_ADC2_Init();
     /* USER CODE BEGIN 2 */
     //initializes PWM and timers
     HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_1);
@@ -166,8 +160,6 @@ int main(void)
             /* USER CODE END WHILE */
 
             /* USER CODE BEGIN 3 */
-
-            // moves each arrayVals up
             arrayPos1 += increment;
             arrayPos2 += increment;
             arrayPos3 += increment;
@@ -215,6 +207,8 @@ int main(void)
                     HAL_GPIO_WritePin(GPIOB, GPIO_PIN_13, (three? 1 : 0));
             }
         }
+    /* USER CODE END 3 */
+
 }
 
 /**
@@ -270,80 +264,6 @@ void SystemClock_Config(void)
     HAL_NVIC_SetPriority(SysTick_IRQn, 0, 0);
 }
 
-/* ADC1 init function */
-static void MX_ADC1_Init(void)
-{
-
-    ADC_ChannelConfTypeDef sConfig;
-
-    /**Configure the global features of the ADC (Clock, Resolution, Data Alignment and number of conversion) 
-     */
-    hadc1.Instance = ADC1;
-    hadc1.Init.ClockPrescaler = ADC_CLOCK_SYNC_PCLK_DIV4;
-    hadc1.Init.Resolution = ADC_RESOLUTION_12B;
-    hadc1.Init.ScanConvMode = DISABLE;
-    hadc1.Init.ContinuousConvMode = ENABLE;
-    hadc1.Init.DiscontinuousConvMode = DISABLE;
-    hadc1.Init.ExternalTrigConvEdge = ADC_EXTERNALTRIGCONVEDGE_NONE;
-    hadc1.Init.ExternalTrigConv = ADC_SOFTWARE_START;
-    hadc1.Init.DataAlign = ADC_DATAALIGN_RIGHT;
-    hadc1.Init.NbrOfConversion = 1;
-    hadc1.Init.DMAContinuousRequests = DISABLE;
-    hadc1.Init.EOCSelection = ADC_EOC_SINGLE_CONV;
-    if (HAL_ADC_Init(&hadc1) != HAL_OK)
-        {
-            _Error_Handler(__FILE__, __LINE__);
-        }
-
-    /**Configure for the selected ADC regular channel its corresponding rank in the sequencer and its sample time. 
-     */
-    sConfig.Channel = ADC_CHANNEL_0;
-    sConfig.Rank = 1;
-    sConfig.SamplingTime = ADC_SAMPLETIME_3CYCLES;
-    if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
-        {
-            _Error_Handler(__FILE__, __LINE__);
-        }
-
-}
-
-/* ADC2 init function */
-static void MX_ADC2_Init(void)
-{
-
-    ADC_ChannelConfTypeDef sConfig;
-
-    /**Configure the global features of the ADC (Clock, Resolution, Data Alignment and number of conversion) 
-     */
-    hadc2.Instance = ADC2;
-    hadc2.Init.ClockPrescaler = ADC_CLOCK_SYNC_PCLK_DIV4;
-    hadc2.Init.Resolution = ADC_RESOLUTION_12B;
-    hadc2.Init.ScanConvMode = DISABLE;
-    hadc2.Init.ContinuousConvMode = ENABLE;
-    hadc2.Init.DiscontinuousConvMode = DISABLE;
-    hadc2.Init.ExternalTrigConvEdge = ADC_EXTERNALTRIGCONVEDGE_NONE;
-    hadc2.Init.ExternalTrigConv = ADC_SOFTWARE_START;
-    hadc2.Init.DataAlign = ADC_DATAALIGN_RIGHT;
-    hadc2.Init.NbrOfConversion = 1;
-    hadc2.Init.DMAContinuousRequests = DISABLE;
-    hadc2.Init.EOCSelection = ADC_EOC_SINGLE_CONV;
-    if (HAL_ADC_Init(&hadc2) != HAL_OK)
-        {
-            _Error_Handler(__FILE__, __LINE__);
-        }
-
-    /**Configure for the selected ADC regular channel its corresponding rank in the sequencer and its sample time. 
-     */
-    sConfig.Channel = ADC_CHANNEL_1;
-    sConfig.Rank = 1;
-    sConfig.SamplingTime = ADC_SAMPLETIME_3CYCLES;
-    if (HAL_ADC_ConfigChannel(&hadc2, &sConfig) != HAL_OK)
-        {
-            _Error_Handler(__FILE__, __LINE__);
-        }
-
-}
-
 /* ADC3 init function */
 static void MX_ADC3_Init(void)
 {
@@ -362,7 +282,7 @@ static void MX_ADC3_Init(void)
     hadc3.Init.ExternalTrigConv = ADC_SOFTWARE_START;
     hadc3.Init.DataAlign = ADC_DATAALIGN_RIGHT;
     hadc3.Init.NbrOfConversion = 1;
-    hadc3.Init.DMAContinuousRequests = DISABLE;
+    hadc3.Init.DMAContinuousRequests = ENABLE;
     hadc3.Init.EOCSelection = ADC_EOC_SINGLE_CONV;
     if (HAL_ADC_Init(&hadc3) != HAL_OK)
         {

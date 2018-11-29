@@ -49,12 +49,6 @@
 
 /* Private define ------------------------------------------------------------*/
 
-#define SENS1_Pin GPIO_PIN_0
-#define SENS1_GPIO_Port GPIOA
-#define SENS2_Pin GPIO_PIN_1
-#define SENS2_GPIO_Port GPIOA
-#define SENS3_Pin GPIO_PIN_2
-#define SENS3_GPIO_Port GPIOA
 #define Green_LED_Pin GPIO_PIN_4
 #define Green_LED_GPIO_Port GPIOC
 #define Red_LED_Pin GPIO_PIN_5
