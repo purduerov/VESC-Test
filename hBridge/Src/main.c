@@ -41,7 +41,7 @@
 #include "stm32f4xx_hal.h"
 
 /* USER CODE BEGIN Includes */
-#define __HAL_TIM_GET_AUTORELOAD(__HANDLE__) ((__HANDLE__)->Instance->ARR)ss
+#define __HAL_TIM_GET_AUTORELOAD(__HANDLE__) ((__HANDLE__)->Instance->ARR)
 /* USER CODE END Includes */
 
 /* Private variables ---------------------------------------------------------*/
@@ -75,7 +75,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim);
 short set1 = 0; // dictates whether the pwm writes to h1 or l1
 short set2 = 0; // dictates whether the pwm writes to h2 or l2
 short set3 = 0; // dictates whether the pwm writes to h3 or l3
-short increment = 3; // dictates how quickly the pwm moves through the lookup table
+short increment = 0; // dictates how quickly the pwm moves through the lookup table
 int percent = 0;
 
 //short lookUp[] = {128,130,132,134,136,139,141,143,145,147,150,152,154,156,158,160,163,165,167,169,171,173,175,177,179,181,183,185,187,189,191,193,195,197,199,201,202,204,206,208,209,211,213,214,216,218,219,221,222,224,225,227,228,229,231,232,233,234,236,237,238,239,240,241,242,243,244,245,246,247,247,248,249,249,250,251,251,252,252,253,253,253,254,254,254,255,255,255,255,255,255,255,255,255,255,255,254,254,254,253,253,253,252,252,251,251,250,249,249,248,247,247,246,245,244,243,242,241,240,239,238,237,236,234,233,232,231,229,228,227,225,224,222,221,219,218,216,214,213,211,209,208,206,204,202,201,199,197,195,193,191,189,187,185,183,181,179,177,175,173,171,169,167,165,163,160,158,156,154,152,150,147,145,143,141,139,136,134,132,130};
@@ -99,9 +99,8 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
     }else{
             percent++;
     }
-    if(HAL_ADC_GetValue(ADC1) >= 134300000){
-            //      if(HAL_ADC_PollForConverstion(&hadc1,1000000) == HAL_OK){
-            HAL_GPIO_WritePin(GPIOC, GPIO_PIN_5,1);
+    if (HAL_ADC_GetValue(&hadc3) >-1){
+            HAL_GPIO_WritePin(GPIOC, GPIO_PIN_5, 1);
     }
 }
 //int val = lookUp[0];
@@ -146,6 +145,7 @@ int main(void)
     HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_3);
     HAL_TIM_Base_Start_IT(&htim3);
     HAL_TIM_Base_Start(&htim2);
+    HAL_ADC_Start(&hadc3);
 
     HAL_GPIO_WritePin(GPIOC, GPIO_PIN_10, 1); // turns on en-gate, allows for writing to motor pins
     HAL_GPIO_WritePin(GPIOC, GPIO_PIN_4, 1);  // enables the green light as a status light
