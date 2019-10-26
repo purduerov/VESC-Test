@@ -1,0 +1,63 @@
+Configuration	hBridge
+STM32CubeMX 	4.27.0
+Date	09/21/2019
+MCU	STM32F405RGTx
+
+
+
+PERIPHERALS	MODES	FUNCTIONS	PINS
+ADC3	IN0	ADC3_IN0	PA0-WKUP
+ADC3	IN1	ADC3_IN1	PA1
+ADC3	IN2	ADC3_IN2	PA2
+SYS	SysTick	SYS_VS_Systick	VP_SYS_VS_Systick
+TIM2	Internal Clock	TIM2_VS_ClockSourceINT	VP_TIM2_VS_ClockSourceINT
+TIM2	PWM Generation CH1	TIM2_CH1	PA5
+TIM2	PWM Generation CH2	TIM2_CH2	PB3
+TIM2	PWM Generation CH3	TIM2_CH3	PB10
+TIM3	Internal Clock	TIM3_VS_ClockSourceINT	VP_TIM3_VS_ClockSourceINT
+
+
+
+Pin Nb	PINs	FUNCTIONs	LABELs
+14	PA0-WKUP	ADC3_IN0	
+15	PA1	ADC3_IN1	
+16	PA2	ADC3_IN2	
+21	PA5	TIM2_CH1	
+24	PC4	GPIO_Output	Green LED
+25	PC5	GPIO_Output	Red LED
+29	PB10	TIM2_CH3	
+34	PB13	GPIO_Output	L3
+35	PB14	GPIO_Output	L2
+36	PB15	GPIO_Output	L1
+41	PA8	GPIO_Output	H3
+42	PA9	GPIO_Output	H2
+43	PA10	GPIO_Output	H1
+51	PC10	GPIO_Output	EN_GATE
+55	PB3	TIM2_CH2	
+
+
+
+SOFTWARE PROJECT
+
+Project Settings : 
+Project Name : hBridge
+Project Folder : C:\Users\admin\VESC-Test\hBridge
+Toolchain / IDE : SW4STM32
+Firmware Package Name and Version : STM32Cube FW_F4 V1.21.0
+
+
+Code Generation Settings : 
+STM32Cube Firmware Library Package : Copy only the necessary library files
+Generate peripheral initialization as a pair of '.c/.h' files per peripheral : No
+Backup previously generated files when re-generating : No
+Delete previously generated files when not re-generated : Yes
+Set all free pins as analog (to optimize the power consumption) : No
+
+
+Toolchains Settings : 
+Compiler Optimizations : 
+
+
+
+
+
