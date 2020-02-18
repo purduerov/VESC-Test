@@ -3482,7 +3482,7 @@ Please make sure your boards conform to these design rules.
 <wire x1="28.0698" y1="5.3312" x2="27.412" y2="5.989" width="0.2032" layer="1"/>
 <via x="34.29" y="16.764" extent="1-16" drill="0.35"/>
 <via x="46.482" y="16.256" extent="1-16" drill="0.35"/>
-<via x="46.482" y="5.461" extent="1-16" drill="0.35"/>
+<via x="46.482" y="5.969" extent="1-16" drill="0.35"/>
 <via x="34.417" y="6.223" extent="1-16" drill="0.35"/>
 </signal>
 <signal name="NRST">
