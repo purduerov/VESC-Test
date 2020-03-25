@@ -3817,8 +3817,12 @@ Please make sure your boards conform to these design rules.
 <wire x1="44.069" y1="6.731" x2="43.5356" y2="7.2644" width="0.2032" layer="16"/>
 <wire x1="43.5356" y1="7.2644" x2="42.9124" y2="7.2644" width="0.2032" layer="16"/>
 <wire x1="36.0934" y1="7.1882" x2="37.2246" y2="7.1882" width="0.2032" layer="16"/>
+<<<<<<< HEAD
 <wire x1="43.815" y1="14.732" x2="43.307" y2="14.224" width="0.2032" layer="16"/>
 <wire x1="43.307" y1="14.224" x2="42.4044" y2="14.224" width="0.2032" layer="16"/>
+=======
+<wire x1="44.898" y1="14.672" x2="44.136" y2="15.053" width="0" layer="19" extent="1-1"/>
+>>>>>>> 49c5f4936ee1c9cee6e73139bfbded367e408187
 </signal>
 <signal name="N$5">
 <contactref element="U1" pad="47"/>

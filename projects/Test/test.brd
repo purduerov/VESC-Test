@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="9.4.1">
+<eagle version="8.6.1">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -162,6 +162,9 @@
 <wire x1="63.5" y1="0" x2="63.5" y2="24.13" width="0" layer="20"/>
 <wire x1="63.5" y1="24.13" x2="0" y2="24.13" width="0" layer="20"/>
 <wire x1="0" y1="24.13" x2="0" y2="0" width="0" layer="20"/>
+<text x="0.889" y="19.177" size="1.016" layer="21">Custom ESC Test Board
+Justin Zhang
+Jonah Shader</text>
 </plain>
 <libraries>
 <library name="SparkFun-Capacitors" urn="urn:adsk.eagle:library:510">
@@ -201,9 +204,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <package3d name="0603" urn="urn:adsk.eagle:package:37414@2/1" type="box" library_version="1">
 <description>Generic 1608 (0603) package
 0.2mm courtyard excess rounded to nearest 0.05mm.</description>
-<packageinstances>
-<packageinstance name="0603"/>
-</packageinstances>
 </package3d>
 <package3d name="0603" urn="urn:adsk.eagle:package:37414/1" type="box" library_version="1">
 <description>Generic 1608 (0603) package
@@ -2704,9 +2704,6 @@ for trimmer refence see : &lt;u&gt;www.electrospec-inc.com/cross_references/trim
 <packages3d>
 <package3d name="R0603" urn="urn:adsk.eagle:package:23555/3" type="model" library_version="11">
 <description>RESISTOR</description>
-<packageinstances>
-<packageinstance name="R0603"/>
-</packageinstances>
 </package3d>
 </packages3d>
 </library>
@@ -2915,9 +2912,6 @@ W = angled&lt;p&gt;
 <packages3d>
 <package3d name="FE08" urn="urn:adsk.eagle:package:8194/1" type="box" library_version="2">
 <description>FEMALE HEADER</description>
-<packageinstances>
-<packageinstance name="FE08"/>
-</packageinstances>
 </package3d>
 </packages3d>
 </library>
@@ -3092,9 +3086,6 @@ Please make sure your boards conform to these design rules.
 <param name="checkRestrict" value="1"/>
 <param name="checkStop" value="0"/>
 <param name="checkValues" value="0"/>
-<param name="checkNames" value="1"/>
-<param name="checkWireStubs" value="1"/>
-<param name="checkPolygonWidth" value="0"/>
 <param name="useDiameter" value="13"/>
 <param name="maxErrors" value="50"/>
 </designrules>
@@ -3387,7 +3378,6 @@ Please make sure your boards conform to these design rules.
 </element>
 <element name="RED_LED" library="VESC_SHIT" library_urn="urn:adsk.eagle:library:11793053" package="LED_VISHAY_TLMX1100" value="TLMS1100-GS08" x="29.972" y="21.082" smashed="yes" rot="R270">
 <attribute name="MANUFACTURER_PART_NUMBER" value="TLMS1100GS08" x="-22.098" y="-14.478" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="NAME" x="23.1394" y="22.733" size="1.27" layer="25" ratio="6" rot="SR0"/>
 <attribute name="VENDOR" value="Vishay" x="-22.098" y="-14.478" size="1.778" layer="27" rot="R270" display="off"/>
 </element>
 <element name="RESET1" library="DiscreteComponents" package="SW_2512" value="" x="38.608" y="20.828" smashed="yes">
@@ -4358,16 +4348,13 @@ Please make sure your boards conform to these design rules.
 <wire x1="25.2106" y1="4.4842" x2="25.5896" y2="4.8632" width="0.2032" layer="1"/>
 </signal>
 </signals>
-<mfgpreviewcolors>
-<mfgpreviewcolor name="soldermaskcolor" color="0xC8008000"/>
-<mfgpreviewcolor name="silkscreencolor" color="0xFFFEFEFE"/>
-<mfgpreviewcolor name="backgroundcolor" color="0xFF282828"/>
-<mfgpreviewcolor name="coppercolor" color="0xFFFFBF00"/>
-<mfgpreviewcolor name="substratecolor" color="0xFF786E46"/>
-</mfgpreviewcolors>
 </board>
 </drawing>
 <compatibility>
+<note version="6.3" minversion="6.2.2" severity="warning">
+Since Version 6.2.2 text objects can contain more than one line,
+which will not be processed correctly with this version.
+</note>
 <note version="8.2" severity="warning">
 Since Version 8.2, EAGLE supports online libraries. The ids
 of those online libraries will not be understood (or retained)
