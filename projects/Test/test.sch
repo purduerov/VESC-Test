@@ -10618,6 +10618,72 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 </deviceset>
 </devicesets>
 </library>
+<library name="resistor-shunt" urn="urn:adsk.eagle:library:346">
+<description>&lt;b&gt;Isabellenhuette SMD Shunt Resistors&lt;/b&gt;&lt;p&gt;
+www.isabellenhuette.de&lt;p&gt;
+&lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
+<packages>
+<package name="PMD" urn="urn:adsk.eagle:footprint:25201/1" library_version="2">
+<description>&lt;b&gt;SMD SHUNT RESISTOR&lt;/b&gt;</description>
+<wire x1="-4.9" y1="-2.9" x2="4.9" y2="-2.9" width="0.2032" layer="21"/>
+<wire x1="4.9" y1="-2.9" x2="4.9" y2="2.9" width="0.2032" layer="21"/>
+<wire x1="4.9" y1="2.9" x2="-4.9" y2="2.9" width="0.2032" layer="21"/>
+<wire x1="-4.9" y1="2.9" x2="-4.9" y2="-2.9" width="0.2032" layer="21"/>
+<smd name="2" x="-3.8608" y="0" dx="1.7" dy="5.4" layer="1"/>
+<smd name="1" x="3.8608" y="0" dx="1.7" dy="5.4" layer="1"/>
+<text x="-2.6924" y="1.016" size="1.27" layer="25">&gt;NAME</text>
+<text x="-2.7432" y="-1.9304" size="1.27" layer="27">&gt;VALUE</text>
+</package>
+</packages>
+<packages3d>
+<package3d name="PMD" urn="urn:adsk.eagle:package:25216/1" type="box" library_version="2">
+<description>SMD SHUNT RESISTOR</description>
+<packageinstances>
+<packageinstance name="PMD"/>
+</packageinstances>
+</package3d>
+</packages3d>
+<symbols>
+<symbol name="R" urn="urn:adsk.eagle:symbol:25196/1" library_version="2">
+<wire x1="2.54" y1="0.889" x2="-2.54" y2="0.889" width="0.254" layer="94"/>
+<wire x1="-2.54" y1="-0.889" x2="2.54" y2="-0.889" width="0.254" layer="94"/>
+<wire x1="-2.54" y1="0.889" x2="-2.54" y2="-0.889" width="0.254" layer="94"/>
+<wire x1="2.54" y1="0.889" x2="2.54" y2="-0.889" width="0.254" layer="94"/>
+<text x="-3.81" y="1.3716" size="1.778" layer="95">&gt;NAME</text>
+<text x="-3.81" y="-2.921" size="1.778" layer="96">&gt;VALUE</text>
+<pin name="2" x="-5.08" y="0" visible="off" length="short" direction="pas" swaplevel="1"/>
+<pin name="1" x="5.08" y="0" visible="off" length="short" direction="pas" swaplevel="1" rot="R180"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="PMD" urn="urn:adsk.eagle:component:25236/2" prefix="R" uservalue="yes" library_version="2">
+<description>&lt;b&gt;SMD SHUNT RESISTOR&lt;/b&gt;</description>
+<gates>
+<gate name="G$1" symbol="R" x="0" y="0" swaplevel="2"/>
+</gates>
+<devices>
+<device name="" package="PMD">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:25216/1"/>
+</package3dinstances>
+<technologies>
+<technology name="">
+<attribute name="MF" value="" constant="no"/>
+<attribute name="MPN" value="" constant="no"/>
+<attribute name="OC_FARNELL" value="unknown" constant="no"/>
+<attribute name="OC_NEWARK" value="unknown" constant="no"/>
+<attribute name="POPULARITY" value="1" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -10705,6 +10771,12 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <part name="U2" library="VESC_SHIT" library_urn="urn:adsk.eagle:library:11793053" deviceset="CSD88584Q5DCT" device=""/>
 <part name="U4" library="VESC_SHIT" library_urn="urn:adsk.eagle:library:11793053" deviceset="CSD88584Q5DCT" device=""/>
 <part name="U3" library="VESC_SHIT" library_urn="urn:adsk.eagle:library:11793053" deviceset="CSD88584Q5DCT" device=""/>
+<part name="R6" library="resistor-shunt" library_urn="urn:adsk.eagle:library:346" deviceset="PMD" device="" package3d_urn="urn:adsk.eagle:package:25216/1"/>
+<part name="R12" library="resistor-shunt" library_urn="urn:adsk.eagle:library:346" deviceset="PMD" device="" package3d_urn="urn:adsk.eagle:package:25216/1"/>
+<part name="R13" library="resistor-shunt" library_urn="urn:adsk.eagle:library:346" deviceset="PMD" device="" package3d_urn="urn:adsk.eagle:package:25216/1"/>
+<part name="GND12" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="GND" device=""/>
+<part name="GND13" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="GND" device=""/>
+<part name="GND14" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -11857,6 +11929,27 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <attribute name="NAME" x="51.1556" y="113.2586" size="2.0828" layer="95" ratio="6" rot="SR0"/>
 <attribute name="VALUE" x="50.5206" y="110.7186" size="2.0828" layer="96" ratio="6" rot="SR0"/>
 </instance>
+<instance part="R6" gate="G$1" x="55.88" y="43.18" smashed="yes" rot="R90">
+<attribute name="NAME" x="54.5084" y="39.37" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="58.801" y="39.37" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="R12" gate="G$1" x="127" y="43.18" smashed="yes" rot="R90">
+<attribute name="NAME" x="125.6284" y="39.37" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="129.921" y="39.37" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="R13" gate="G$1" x="200.66" y="40.64" smashed="yes" rot="R90">
+<attribute name="NAME" x="199.2884" y="36.83" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="203.581" y="36.83" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="GND12" gate="1" x="55.88" y="35.56" smashed="yes">
+<attribute name="VALUE" x="55.88" y="35.306" size="1.778" layer="96" align="top-center"/>
+</instance>
+<instance part="GND13" gate="1" x="127" y="35.56" smashed="yes">
+<attribute name="VALUE" x="127" y="35.306" size="1.778" layer="96" align="top-center"/>
+</instance>
+<instance part="GND14" gate="1" x="200.66" y="33.02" smashed="yes">
+<attribute name="VALUE" x="200.66" y="32.766" size="1.778" layer="96" align="top-center"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -11945,6 +12038,7 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <wire x1="73.66" y1="83.82" x2="73.66" y2="86.36" width="0.1524" layer="91"/>
 <junction x="73.66" y="83.82"/>
 <pinref part="U3" gate="A" pin="PGND"/>
+<pinref part="R6" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="12V" class="0">
@@ -12048,6 +12142,7 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <pinref part="U4" gate="A" pin="PGND_9"/>
 <junction x="144.78" y="83.82"/>
 <pinref part="U4" gate="A" pin="PGND"/>
+<pinref part="R12" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="PHASE_C1" class="0">
@@ -12127,6 +12222,7 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <pinref part="U2" gate="A" pin="PGND_9"/>
 <junction x="218.44" y="83.82"/>
 <pinref part="U2" gate="A" pin="PGND"/>
+<pinref part="R13" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="GLC_1" class="0">
@@ -12134,6 +12230,20 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <wire x1="218.44" y1="91.44" x2="226.06" y2="91.44" width="0.1524" layer="91"/>
 <label x="220.98" y="91.44" size="1.778" layer="95"/>
 <pinref part="U2" gate="A" pin="GL"/>
+</segment>
+</net>
+<net name="GND" class="0">
+<segment>
+<pinref part="GND12" gate="1" pin="GND"/>
+<pinref part="R6" gate="G$1" pin="2"/>
+</segment>
+<segment>
+<pinref part="GND13" gate="1" pin="GND"/>
+<pinref part="R12" gate="G$1" pin="2"/>
+</segment>
+<segment>
+<pinref part="GND14" gate="1" pin="GND"/>
+<pinref part="R13" gate="G$1" pin="2"/>
 </segment>
 </net>
 </nets>
