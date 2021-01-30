@@ -1,0 +1,14 @@
+.metadata
+RemoteSystemsTempFiles
+*.o
+*.su
+*.binary
+*.elf
+*.hex
+*.list
+*.map
+**/Debug/*
+
+*.l#?
+*.s#?
+*.b#?
