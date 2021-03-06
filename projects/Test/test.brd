@@ -653,20 +653,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <text x="-1.27" y="1.397" size="0.6096" layer="25" font="vector" ratio="20">&gt;NAME</text>
 <text x="-1.27" y="-2.032" size="0.6096" layer="27" font="vector" ratio="20">&gt;VALUE</text>
 </package>
-<package name="BANANA_CONN" urn="urn:adsk.eagle:footprint:37619/1" library_version="1">
-<description>&lt;h3&gt;Banana Plug PTH&lt;/h3&gt;
-0.2" diameter pad, 0.1" hole. 
-&lt;p&gt;Specifications:
-&lt;ul&gt;&lt;li&gt;Pin count: 1&lt;/li&gt;
-&lt;/ul&gt;&lt;/p&gt;
-&lt;p&gt;Example device(s):
-&lt;ul&gt;&lt;li&gt;BANANA_CONN&lt;/li&gt;
-&lt;/ul&gt;&lt;/p&gt;</description>
-<circle x="0" y="0" radius="2.8398" width="0.127" layer="21"/>
-<pad name="P$1" x="0" y="0" drill="3.81" diameter="5.461"/>
-<text x="-2.54" y="3.302" size="0.6096" layer="25" font="vector" ratio="20">&gt;NAME</text>
-<text x="-2.54" y="-3.937" size="0.6096" layer="27" font="vector" ratio="20">&gt;VALUE</text>
-</package>
 <package name="1X02" urn="urn:adsk.eagle:footprint:37654/1" library_version="1">
 <description>&lt;h3&gt;Plated Through Hole&lt;/h3&gt;
 &lt;p&gt;Specifications:
@@ -723,19 +709,6 @@ CONN_08
 </description>
 <packageinstances>
 <packageinstance name="1X08"/>
-</packageinstances>
-</package3d>
-<package3d name="BANANA_CONN" urn="urn:adsk.eagle:package:38018/1" type="box" library_version="1">
-<description>Banana Plug PTH
-0.2" diameter pad, 0.1" hole. 
-Specifications:
-Pin count: 1
-
-Example device(s):
-BANANA_CONN
-</description>
-<packageinstances>
-<packageinstance name="BANANA_CONN"/>
 </packageinstances>
 </package3d>
 <package3d name="1X02" urn="urn:adsk.eagle:package:38039/1" type="box" library_version="1">
@@ -868,6 +841,23 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </packageinstances>
 </package3d>
 </packages3d>
+</library>
+<library name="Banana Plug PTH">
+<packages>
+<package name="BANANA_CONN_NO_THERM" urn="urn:adsk.eagle:footprint:37619/1" locally_modified="yes">
+<description>&lt;h3&gt;Banana Plug PTH&lt;/h3&gt;
+0.2" diameter pad, 0.1" hole. 
+&lt;p&gt;Specifications:
+&lt;ul&gt;&lt;li&gt;Pin count: 1&lt;/li&gt;
+&lt;/ul&gt;&lt;/p&gt;
+&lt;p&gt;Example device(s):
+&lt;ul&gt;&lt;li&gt;BANANA_CONN&lt;/li&gt;
+&lt;/ul&gt;&lt;/p&gt;</description>
+<circle x="0" y="0" radius="2.8398" width="0.127" layer="21"/>
+<pad name="1" x="0" y="0" drill="3.81" diameter="5.461" thermals="no"/>
+<text x="0" y="3.302" size="0.9144" layer="25" ratio="20" align="bottom-center">&gt;NAME</text>
+</package>
+</packages>
 </library>
 </libraries>
 <attributes>
@@ -1257,11 +1247,11 @@ Please make sure your boards conform to these design rules.
 <attribute name="NAME" x="7.366" y="24.892" size="0.6096" layer="25" font="vector" ratio="20"/>
 <attribute name="VALUE" x="7.366" y="21.971" size="0.6096" layer="27" font="vector" ratio="20" align="top-left"/>
 </element>
-<element name="J10" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" package="BANANA_CONN" package3d_urn="urn:adsk.eagle:package:38018/1" value="" x="3.302" y="2.794" smashed="yes">
+<element name="J10" library="Banana Plug PTH" package="BANANA_CONN_NO_THERM" value="" x="3.302" y="2.794" smashed="yes">
 <attribute name="NAME" x="0.762" y="6.096" size="0.6096" layer="25" font="vector" ratio="20"/>
 <attribute name="VALUE" x="0.762" y="-1.143" size="0.6096" layer="27" font="vector" ratio="20"/>
 </element>
-<element name="J11" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" package="BANANA_CONN" package3d_urn="urn:adsk.eagle:package:38018/1" value="" x="4.064" y="24.003" smashed="yes">
+<element name="J11" library="Banana Plug PTH" package="BANANA_CONN_NO_THERM" value="" x="4.064" y="24.003" smashed="yes">
 <attribute name="NAME" x="1.524" y="27.305" size="0.6096" layer="25" font="vector" ratio="20"/>
 <attribute name="VALUE" x="1.524" y="20.066" size="0.6096" layer="27" font="vector" ratio="20"/>
 </element>
@@ -1342,7 +1332,7 @@ Please make sure your boards conform to these design rules.
 <contactref element="R11" pad="1"/>
 <contactref element="SV1" pad="3"/>
 <contactref element="J9" pad="1"/>
-<contactref element="J11" pad="P$1"/>
+<contactref element="J11" pad="1"/>
 <contactref element="Q3" pad="1"/>
 <contactref element="Q2" pad="3"/>
 <polygon width="0.6096" layer="16">
@@ -1395,10 +1385,10 @@ Please make sure your boards conform to these design rules.
 <wire x1="38.543" y1="14.531" x2="38.543" y2="17.1541" width="0.2032" layer="1"/>
 <wire x1="38.543" y1="17.1541" x2="38.5445" y2="17.1556" width="0.2032" layer="1"/>
 <via x="38.5445" y="17.1556" extent="1-16" drill="0.35"/>
-<wire x1="27.178" y1="15.748" x2="28.448" y2="14.478" width="0" layer="19" extent="16-16"/>
+<wire x1="27.178" y1="15.748" x2="28.448" y2="14.478" width="0" layer="19" extent="1-1"/>
 <wire x1="27.178" y1="15.748" x2="27.178" y2="15.748" width="0" layer="19" extent="1-16"/>
 <wire x1="22.01" y1="9.144" x2="22.01" y2="8.636" width="0" layer="19" extent="1-16"/>
-<wire x1="25.908" y1="17.018" x2="27.178" y2="15.748" width="0" layer="19" extent="16-16"/>
+<wire x1="25.908" y1="17.018" x2="27.178" y2="15.748" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="NRST">
 <contactref element="C10" pad="1"/>
@@ -1584,7 +1574,7 @@ Please make sure your boards conform to these design rules.
 <wire x1="64.389" y1="21.082" x2="64.389" y2="4.572" width="0.762" layer="1"/>
 <wire x1="61.722" y1="23.749" x2="64.389" y2="21.082" width="0.762" layer="1"/>
 <contactref element="J8" pad="1"/>
-<contactref element="J10" pad="P$1"/>
+<contactref element="J10" pad="1"/>
 <contactref element="Q3" pad="5"/>
 <contactref element="Q3" pad="6"/>
 <via x="12.954" y="15.494" extent="1-16" drill="0.35"/>
