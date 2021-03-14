@@ -12,3 +12,5 @@ RemoteSystemsTempFiles
 *.l#?
 *.s#?
 *.b#?
+
+*.DS_Store

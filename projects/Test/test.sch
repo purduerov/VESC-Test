@@ -2721,20 +2721,6 @@ Holes are offset 0.005" to hold pins in place during soldering.
 <text x="-1.27" y="1.397" size="0.6096" layer="25" font="vector" ratio="20">&gt;NAME</text>
 <text x="-1.27" y="-2.032" size="0.6096" layer="27" font="vector" ratio="20">&gt;VALUE</text>
 </package>
-<package name="BANANA_CONN" urn="urn:adsk.eagle:footprint:37619/1" library_version="1">
-<description>&lt;h3&gt;Banana Plug PTH&lt;/h3&gt;
-0.2" diameter pad, 0.1" hole. 
-&lt;p&gt;Specifications:
-&lt;ul&gt;&lt;li&gt;Pin count: 1&lt;/li&gt;
-&lt;/ul&gt;&lt;/p&gt;
-&lt;p&gt;Example device(s):
-&lt;ul&gt;&lt;li&gt;BANANA_CONN&lt;/li&gt;
-&lt;/ul&gt;&lt;/p&gt;</description>
-<circle x="0" y="0" radius="2.8398" width="0.127" layer="21"/>
-<pad name="P$1" x="0" y="0" drill="3.81" diameter="5.461"/>
-<text x="-2.54" y="3.302" size="0.6096" layer="25" font="vector" ratio="20">&gt;NAME</text>
-<text x="-2.54" y="-3.937" size="0.6096" layer="27" font="vector" ratio="20">&gt;VALUE</text>
-</package>
 <package name="1X02" urn="urn:adsk.eagle:footprint:37654/1" library_version="1">
 <description>&lt;h3&gt;Plated Through Hole&lt;/h3&gt;
 &lt;p&gt;Specifications:
@@ -3654,19 +3640,6 @@ CONN_08
 <packageinstance name="1X08_FEMALE_LOCK"/>
 </packageinstances>
 </package3d>
-<package3d name="BANANA_CONN" urn="urn:adsk.eagle:package:38018/1" type="box" library_version="1">
-<description>Banana Plug PTH
-0.2" diameter pad, 0.1" hole. 
-Specifications:
-Pin count: 1
-
-Example device(s):
-BANANA_CONN
-</description>
-<packageinstances>
-<packageinstance name="BANANA_CONN"/>
-</packageinstances>
-</package3d>
 <package3d name="1X02" urn="urn:adsk.eagle:package:38039/1" type="box" library_version="1">
 <description>Plated Through Hole
 Specifications:
@@ -4014,14 +3987,6 @@ part number 2062-2P from STA</description>
 <pin name="6" x="5.08" y="5.08" visible="pad" length="middle" direction="pas" swaplevel="1" rot="R180"/>
 <pin name="7" x="5.08" y="7.62" visible="pad" length="middle" direction="pas" swaplevel="1" rot="R180"/>
 <pin name="8" x="5.08" y="10.16" visible="pad" length="middle" direction="pas" swaplevel="1" rot="R180"/>
-</symbol>
-<symbol name="BANANA_CONN" urn="urn:adsk.eagle:symbol:37618/1" library_version="1">
-<description>&lt;h3&gt;Through-hole Banana Jack&lt;/h3&gt;
-&lt;p&gt;Basic PTH connection for banana jack plugs&lt;/p&gt;</description>
-<circle x="0" y="0" radius="1.2951" width="0.254" layer="94"/>
-<text x="-1.016" y="1.778" size="1.778" layer="95" font="vector">&gt;NAME</text>
-<text x="-1.016" y="-3.048" size="1.778" layer="96" font="vector">&gt;VALUE</text>
-<pin name="1" x="-2.54" y="0" visible="off" length="short" direction="pas"/>
 </symbol>
 <symbol name="CONN_02" urn="urn:adsk.eagle:symbol:37653/1" library_version="1">
 <description>&lt;h3&gt;2 Pin Connection&lt;/h3&gt;</description>
@@ -4507,33 +4472,6 @@ This footprint was designed to help hold the alignment of a through-hole compone
 <attribute name="PROD_ID" value="CONN-09233" constant="no"/>
 <attribute name="SF_ID" value="PRT-09279" constant="no"/>
 </technology>
-</technologies>
-</device>
-</devices>
-</deviceset>
-<deviceset name="BANANA_CONN" urn="urn:adsk.eagle:component:38313/1" prefix="J" uservalue="yes" library_version="1">
-<description>&lt;h3&gt;Through-hole Banana Jack&lt;/h3&gt;
-&lt;p&gt;Basic PTH connection for banana jack plugs&lt;/p&gt;
-&lt;p&gt;SparkFun Products:
-&lt;ul&gt;&lt;li&gt;&lt;a href="https://www.sparkfun.com/products/retired/10956"&gt;Multimeter Kit&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://www.sparkfun.com/products/retired/509"&gt;Banana to Alligator Cable&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://www.sparkfun.com/products/retired/508"&gt;Banana to Alligator Coax Cable&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://www.sparkfun.com/products/retired/507"&gt;Banana to Banana Cable&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://www.sparkfun.com/products/retired/506"&gt;Banana to IC Hook Cables&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/p&gt;</description>
-<gates>
-<gate name="G$1" symbol="BANANA_CONN" x="-2.54" y="0"/>
-</gates>
-<devices>
-<device name="" package="BANANA_CONN">
-<connects>
-<connect gate="G$1" pin="1" pad="P$1"/>
-</connects>
-<package3dinstances>
-<package3dinstance package3d_urn="urn:adsk.eagle:package:38018/1"/>
-</package3dinstances>
-<technologies>
-<technology name=""/>
 </technologies>
 </device>
 </devices>
@@ -5286,6 +5224,49 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </deviceset>
 </devicesets>
 </library>
+<library name="Banana Plug PTH">
+<packages>
+<package name="BANANA_CONN_NO_THERM" urn="urn:adsk.eagle:footprint:37619/1" locally_modified="yes">
+<description>&lt;h3&gt;Banana Plug PTH&lt;/h3&gt;
+0.2" diameter pad, 0.1" hole. 
+&lt;p&gt;Specifications:
+&lt;ul&gt;&lt;li&gt;Pin count: 1&lt;/li&gt;
+&lt;/ul&gt;&lt;/p&gt;
+&lt;p&gt;Example device(s):
+&lt;ul&gt;&lt;li&gt;BANANA_CONN&lt;/li&gt;
+&lt;/ul&gt;&lt;/p&gt;</description>
+<circle x="0" y="0" radius="2.8398" width="0.127" layer="21"/>
+<pad name="1" x="0" y="0" drill="3.81" diameter="5.461" thermals="no"/>
+<text x="0" y="3.302" size="0.9144" layer="25" ratio="20" align="bottom-center">&gt;NAME</text>
+</package>
+</packages>
+<symbols>
+<symbol name="BANANA_CONN">
+<description>&lt;h3&gt;Through-hole Banana Jack&lt;/h3&gt;
+&lt;p&gt;Basic PTH connection for banana jack plugs&lt;/p&gt;</description>
+<circle x="0" y="0" radius="1.2951" width="0.254" layer="94"/>
+<text x="-1.016" y="1.778" size="1.778" layer="95" font="vector">&gt;NAME</text>
+<pin name="1" x="-2.54" y="0" visible="off" length="short" direction="pas"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="BANANA_PTH" prefix="J" uservalue="yes">
+<gates>
+<gate name="G$1" symbol="BANANA_CONN" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="BANANA_CONN_NO_THERM">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -5366,8 +5347,8 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="R11" library="SparkFun-Resistors" library_urn="urn:adsk.eagle:library:532" deviceset="RESISTOR" device="0603" package3d_urn="urn:adsk.eagle:package:39650/1" value=" "/>
 <part name="J8" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CONN_01" device="" package3d_urn="urn:adsk.eagle:package:38028/1"/>
 <part name="J9" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CONN_01" device="" package3d_urn="urn:adsk.eagle:package:38028/1"/>
-<part name="J10" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="BANANA_CONN" device="" package3d_urn="urn:adsk.eagle:package:38018/1"/>
-<part name="J11" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="BANANA_CONN" device="" package3d_urn="urn:adsk.eagle:package:38018/1"/>
+<part name="J10" library="Banana Plug PTH" deviceset="BANANA_PTH" device=""/>
+<part name="J11" library="Banana Plug PTH" deviceset="BANANA_PTH" device=""/>
 <part name="J12" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CONN_02" device="" package3d_urn="urn:adsk.eagle:package:38039/1"/>
 <part name="U$2" library="Motor Driver - DRV834xH" deviceset="DRV8343H" device=""/>
 <part name="C1" library="SparkFun-Capacitors" library_urn="urn:adsk.eagle:library:510" deviceset="0.1UF" device="-0603-25V-(+80/-20%)" package3d_urn="urn:adsk.eagle:package:37414@1/1" value="0.1uF"/>
@@ -5547,10 +5528,10 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <plain>
 <text x="111.76" y="154.94" size="1.778" layer="91">Pin 1 (VBAT)</text>
 <text x="132.08" y="154.94" size="1.778" layer="91">Pin 13 (VDDA)</text>
-<text x="33.02" y="93.98" size="1.27" layer="91" align="top-left">In 1x PWM:
+<text x="25.4" y="101.6" size="1.27" layer="91" align="top-left">In 1x PWM:
 INHA is the "carrier" wave (TIM3_CH1)
 INLA, INHB, and INLB control states (TIM1_CH1,2,3)
-INHC controls direction with hall effect sensors (unused)
+INHC controls direction with hall effect sensors (unused, TIM14_CH1)
 INLC brakes the motor (active low) (also TIM14_CH1)</text>
 </plain>
 <instances>
