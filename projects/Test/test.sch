@@ -6072,6 +6072,7 @@ INLC brakes the motor (active low) (also TIM14_CH1)</text>
 <text x="25.4" y="53.34" size="1.778" layer="91">SHA_1</text>
 <text x="119.38" y="66.04" size="1.778" layer="91">SHB_1</text>
 <text x="195.58" y="63.5" size="1.778" layer="91">SHC_1</text>
+<text x="30.48" y="134.62" size="1.778" layer="91" rot="R90">Use no resistors for 1x PWM</text>
 </plain>
 <instances>
 <instance part="FRAME5" gate="G$1" x="0" y="0" smashed="yes">
