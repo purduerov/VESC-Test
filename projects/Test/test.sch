@@ -5530,11 +5530,9 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <plain>
 <text x="111.76" y="154.94" size="1.778" layer="91">Pin 1 (VBAT)</text>
 <text x="132.08" y="154.94" size="1.778" layer="91">Pin 13 (VDDA)</text>
-<text x="25.4" y="101.6" size="1.27" layer="91" align="top-left">In 1x PWM:
-INHA is the "carrier" wave (TIM3_CH1)
-INLA, INHB, and INLB control states (TIM1_CH1,2,3)
-INHC controls direction with hall effect sensors (unused, TIM14_CH1)
-INLC brakes the motor (active low) (also TIM14_CH1)</text>
+<text x="25.4" y="86.36" size="1.27" layer="91" align="top-left">In 3x PWM:
+INHx controls each pin (TIM1_CH1,2,3)
+INLx place the half bridge in Hi-Z (TIM3_CH1, TIM3_CH2, TIM14_CH1)</text>
 </plain>
 <instances>
 <instance part="R1" gate="G$1" x="45.72" y="43.18" smashed="yes" rot="R90">
@@ -5804,50 +5802,50 @@ INLC brakes the motor (active low) (also TIM14_CH1)</text>
 </net>
 <net name="INHA_1" class="0">
 <segment>
-<pinref part="U$5" gate="G$1" pin="PA6"/>
-<wire x1="93.98" y1="81.28" x2="91.44" y2="81.28" width="0.1524" layer="91"/>
-<label x="91.44" y="81.28" size="1.27" layer="95" rot="R180" xref="yes"/>
-</segment>
-<segment>
 <wire x1="96.52" y1="30.48" x2="93.98" y2="30.48" width="0.1524" layer="91"/>
 <label x="93.98" y="30.48" size="1.27" layer="95" rot="R180" xref="yes"/>
 <pinref part="J2" gate="G$1" pin="1"/>
 </segment>
-</net>
-<net name="INHB_1" class="0">
-<segment>
-<pinref part="U$5" gate="G$1" pin="PA9"/>
-<wire x1="93.98" y1="73.66" x2="91.44" y2="73.66" width="0.1524" layer="91"/>
-<label x="91.44" y="73.66" size="1.27" layer="95" rot="R180" xref="yes"/>
-</segment>
-<segment>
-<wire x1="96.52" y1="20.32" x2="93.98" y2="20.32" width="0.1524" layer="91"/>
-<label x="93.98" y="20.32" size="1.27" layer="95" rot="R180" xref="yes"/>
-<pinref part="J3" gate="G$1" pin="1"/>
-</segment>
-</net>
-<net name="INLA_1" class="0">
 <segment>
 <pinref part="U$5" gate="G$1" pin="PA8"/>
 <wire x1="93.98" y1="76.2" x2="91.44" y2="76.2" width="0.1524" layer="91"/>
 <label x="91.44" y="76.2" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
+</net>
+<net name="INHB_1" class="0">
+<segment>
+<wire x1="96.52" y1="20.32" x2="93.98" y2="20.32" width="0.1524" layer="91"/>
+<label x="93.98" y="20.32" size="1.27" layer="95" rot="R180" xref="yes"/>
+<pinref part="J3" gate="G$1" pin="1"/>
+</segment>
+<segment>
+<pinref part="U$5" gate="G$1" pin="PA9"/>
+<wire x1="93.98" y1="73.66" x2="91.44" y2="73.66" width="0.1524" layer="91"/>
+<label x="91.44" y="73.66" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+</net>
+<net name="INLA_1" class="0">
 <segment>
 <wire x1="121.92" y1="30.48" x2="124.46" y2="30.48" width="0.1524" layer="91"/>
 <label x="124.46" y="30.48" size="1.27" layer="95" xref="yes"/>
 <pinref part="J5" gate="G$1" pin="1"/>
 </segment>
+<segment>
+<pinref part="U$5" gate="G$1" pin="PA6"/>
+<wire x1="93.98" y1="81.28" x2="91.44" y2="81.28" width="0.1524" layer="91"/>
+<label x="91.44" y="81.28" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
 </net>
 <net name="INHC_1" class="0">
-<segment>
-<pinref part="U$5" gate="G$1" pin="PA7"/>
-<wire x1="93.98" y1="78.74" x2="91.44" y2="78.74" width="0.1524" layer="91"/>
-<label x="91.44" y="78.74" size="1.27" layer="95" rot="R180" xref="yes"/>
-</segment>
 <segment>
 <wire x1="96.52" y1="10.16" x2="93.98" y2="10.16" width="0.1524" layer="91"/>
 <label x="93.98" y="10.16" size="1.27" layer="95" rot="R180" xref="yes"/>
 <pinref part="J4" gate="G$1" pin="1"/>
+</segment>
+<segment>
+<pinref part="U$5" gate="G$1" pin="PA10"/>
+<wire x1="93.98" y1="71.12" x2="91.44" y2="71.12" width="0.1524" layer="91"/>
+<label x="91.44" y="71.12" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="OSC_IN" class="0">
@@ -5898,14 +5896,14 @@ INLC brakes the motor (active low) (also TIM14_CH1)</text>
 </net>
 <net name="INLB_1" class="0">
 <segment>
-<pinref part="U$5" gate="G$1" pin="PA10"/>
-<wire x1="93.98" y1="71.12" x2="91.44" y2="71.12" width="0.1524" layer="91"/>
-<label x="91.44" y="71.12" size="1.27" layer="95" rot="R180" xref="yes"/>
-</segment>
-<segment>
 <wire x1="121.92" y1="20.32" x2="124.46" y2="20.32" width="0.1524" layer="91"/>
 <label x="124.46" y="20.32" size="1.27" layer="95" xref="yes"/>
 <pinref part="J6" gate="G$1" pin="1"/>
+</segment>
+<segment>
+<pinref part="U$5" gate="G$1" pin="PA7"/>
+<wire x1="93.98" y1="78.74" x2="91.44" y2="78.74" width="0.1524" layer="91"/>
+<label x="91.44" y="78.74" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="INLC_1" class="0">
